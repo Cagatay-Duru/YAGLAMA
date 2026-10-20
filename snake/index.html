@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2P Snake</title>
+  <meta name="description" content="İki kişilik pixel yılan oyunu. Rakibine çarp, kazan!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hud">
+    <div class="hud-player">
+      <div class="hud-label p1-label">P1 · WASD</div>
+      <div class="hud-score p1-score" id="s1">0</div>
+    </div>
+    <div class="hud-title">SNAKE</div>
+    <div class="hud-player hud-right">
+      <div class="hud-label p2-label">P2 · ↑↓←→</div>
+      <div class="hud-score p2-score" id="s2">0</div>
+    </div>
+  </div>
+
+  <div class="canvas-wrap">
+    <canvas id="game"></canvas>
+    <div class="overlay" id="overlay">
+      <div class="overlay-box">
+        <div class="ov-title" id="ov-title">2P SNAKE</div>
+        <div class="ov-msg"   id="ov-msg">P1: WASD &nbsp;|&nbsp; P2: ↑↓←→</div>
+        <div class="ov-sub"   id="ov-sub">ENTER veya SPACE ile başla</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
