@@ -1,0 +1,2 @@
+# YAGLAMA
+Yağlama anısına repo
