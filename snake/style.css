@@ -1,0 +1,122 @@
+/* ── 2P SNAKE · style.css ── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --p1   : #6bc46b;
+  --p2   : #6b9de8;
+  --bg   : #0c0c0c;
+  --surf : #111111;
+  --bord : #222222;
+  --mute : #444444;
+  --dim  : #2a2a2a;
+  --text : #888888;
+  --font : 'Press Start 2P', monospace;
+}
+
+html, body {
+  background  : var(--bg);
+  color       : var(--text);
+  font-family : var(--font);
+  display     : flex;
+  flex-direction: column;
+  align-items : center;
+  justify-content: center;
+  min-height  : 100vh;
+  gap         : 0;
+  user-select : none;
+  -webkit-user-select: none;
+}
+
+/* ── HUD ── */
+.hud {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  width          : 500px;
+  padding        : 14px 10px 10px;
+}
+
+.hud-player {
+  display        : flex;
+  flex-direction : column;
+  gap            : 6px;
+  flex           : 1;
+}
+.hud-right { text-align: right; align-items: flex-end; }
+
+.hud-label { font-size: 6px; letter-spacing: .08em; color: var(--mute); }
+.hud-score { font-size: 20px; line-height: 1; }
+
+.p1-label  { color: color-mix(in srgb, var(--p1) 60%, var(--mute)); }
+.p1-score  { color: var(--p1); }
+.p2-label  { color: color-mix(in srgb, var(--p2) 60%, var(--mute)); }
+.p2-score  { color: var(--p2); }
+
+.hud-title {
+  font-size      : 9px;
+  letter-spacing : .15em;
+  color          : var(--dim);
+  flex           : 0 0 auto;
+  padding        : 0 16px;
+}
+
+/* ── Canvas ── */
+.canvas-wrap {
+  position     : relative;
+  line-height  : 0;
+  border       : 2px solid var(--bord);
+  outline      : 1px solid var(--dim);
+  outline-offset: 3px;
+}
+
+#game {
+  display          : block;
+  image-rendering  : pixelated;
+  image-rendering  : crisp-edges;
+}
+
+/* ── Overlay ── */
+.overlay {
+  position       : absolute;
+  inset          : 0;
+  background     : rgba(0,0,0,.80);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+}
+.overlay.hidden { display: none; }
+
+.overlay-box {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  gap            : 18px;
+  padding        : 36px 28px;
+  border         : 1px solid var(--bord);
+  background     : rgba(12,12,12,.96);
+}
+
+.ov-title {
+  font-size      : 20px;
+  color          : #cccccc;
+  letter-spacing : .12em;
+}
+.ov-title.p1-win { color: var(--p1); }
+.ov-title.p2-win { color: var(--p2); }
+.ov-title.draw   { color: var(--text); }
+
+.ov-msg {
+  font-size      : 8px;
+  color          : var(--mute);
+  letter-spacing : .05em;
+  line-height    : 1.8;
+  text-align     : center;
+}
+
+.ov-sub {
+  font-size      : 7px;
+  color          : var(--dim);
+  letter-spacing : .06em;
+  margin-top     : 4px;
+}
